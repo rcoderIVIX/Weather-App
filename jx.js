@@ -44,13 +44,13 @@ showTemp.appendChild(tempNumber)
 
 fButton.addEventListener('click', ()=>{
 
-tempNumber.textContent = `${convertTemp}°F`
+tempNumber.textContent = `${Math.round(convertTemp * 100) / 100}°F`
 
 })
 
 if (fButton.checked){
 
-    tempNumber.textContent = `${convertTemp}°F`
+    tempNumber.textContent = `${Math.round(convertTemp * 100) / 100}°F`
     
     }
 else if (cButton.checked){
@@ -112,6 +112,22 @@ let btn = document.querySelector('.do')
 
 btn.addEventListener('click', ()=>{
 
+
+let todayNow = document.querySelector('.today')
+
+let temp = document.querySelector('.temp')
+
+let cond = document.querySelector('.condition')
+
+let desc = document.querySelector('.desc')
+
+let adds = document.querySelector('.adds')
+
+todayNow.textContent = ''
+temp.textContent = ''
+cond.textContent = ''
+desc.textContent = ''
+adds.textContent = ''
 
 getWeather();
 
